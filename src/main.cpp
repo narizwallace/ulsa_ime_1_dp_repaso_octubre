@@ -9,19 +9,21 @@ void saludarARegina() {
     std::cout << "Bienvenida a la clase de C++\n";
 }
 
-void saludarAOtraPersona() {
-    std::string nombre;
-    std::cout << "Ingrese su nombre: ";
-    std::cin >> nombre;
-    // solo leo una palabra, y si quiero leer varias
-    // tengo que poner más variables o usar getline()
-
+void saludarAOtraPersona(std::string nombre) {
     std::cout << "Hola " << nombre << "!" << std::endl;
+}
+
+std::string capturarNombre(std::string mensaje) {
+    std::string nombre;
+    std::cout << mensaje;
+    std::cin >> nombre;
+    return nombre;
 }
 
 int main () {
     // Your code here
-    saludarARegina();
-    saludarAOtraPersona();
+    std::string nombre = capturarNombre("Ingrese su nombre: ");
+    saludarAOtraPersona(nombre);
+
     return 0; //termino el codgio exitosamente 
 }
