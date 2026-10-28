@@ -22,8 +22,15 @@ std::string capturarNombre(std::string mensaje) {
 
 int main () {
     // Your code here
-    std::string nombre = capturarNombre("Ingrese su nombre: ");
-    saludarAOtraPersona(nombre);
+    const int tamanoArreglo = 3;
+    std::string nombres[tamanoArreglo];
+    nombres[0] =capturarNombre("Ingresa el nombre de la primera persona: ");
+    nombres[1] =capturarNombre("Ingresa el nombre de la segunda persona: ");
+    nombres[2] =capturarNombre("Ingresa el nombre de la tercera persona: ");
+
+    for (int i = 0; i < tamanoArreglo; i++) {
+        saludarAOtraPersona(nombres[i]);
+    }
 
     return 0; //termino el codgio exitosamente 
 }
